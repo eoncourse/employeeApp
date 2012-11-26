@@ -1,0 +1,35 @@
+<h1>Add employee</h1>
+
+<%= form_tag employee_create_path do |f| %>
+    <p>
+      <%= label_tag 'Name' %><br/>
+      <%= text_field_tag :name %>
+    </p>
+    <p>
+      <%= label_tag 'Email' %><br/>
+      <%= text_field_tag :email %>
+    </p>
+    <p>
+      <%= submit_tag 'Create' %>
+    </p>
+<% end %>
+
+<h1>Listing employees</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+  <% @employees.each do |emp| %>
+      <tr>
+        <td>
+          <%= emp.name %></td>
+        <td>
+          <%= emp.email %></td>
+        <td>
+          <%= link_to "Edit", "/employees/edit/#{emp.id}" %></td>
+      </tr>
+  <% end %>
+</table>
+

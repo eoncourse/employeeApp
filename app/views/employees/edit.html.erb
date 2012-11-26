@@ -1,0 +1,20 @@
+<h1>Editing employee</h1>
+<%= form_for @employee,
+             :url => "/employees/update/#{@employee.id}" do |f| %>
+    <p>
+      <%= f.label 'Name' %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label 'Email' %><br/>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label 'Wage' %><br/>
+      <%= f.text_field :wage %>
+    </p>
+
+    <p>
+      <%= submit_tag 'Update' %>
+    </p>
+<% end %>
